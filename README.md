@@ -20,6 +20,7 @@ Un catalogador de componentes electrónicos y datasheets para organizar tu colec
 
 - **Interfaz de dos pestañas:** "Componentes" y "Datasheets y Manuales".
 - **Tema oscuro personalizado** para reducir la fatiga visual.
+- **Inventario físico:** Controla la cantidad de cada componente que tienes en tu taller y su ubicación física (cajón, estante, etc.).
 - **Búsqueda de vínculos:** Detecta coincidencias parciales entre nombres de componentes y documentos (ej: `CDS111` en `CDS111_manual.pdf`).
 - **Importar/Exportar datos:** Respalda todo tu catálogo en un archivo ZIP.
 - **Compatibilidad multiplataforma:** Funciona en Windows y Linux (ajustes de DPI y fuentes incluidos).
@@ -68,7 +69,9 @@ Al abrir la aplicación verás dos pestañas principales:
 ### Pestaña "Componentes"
 - Agrega un nuevo componente con el botón correspondiente.
 - Busca, filtra o elimina componentes de tu lista.
-- Al hacer clic derecho (o selectionar), puedes ver/locs documents vinculados.
+- **Gestión de stock:** Lleva el control de la cantidad de cada componente en tu taller.
+- **Ubicación física:** Asigna una ubicación específica (cajón, estante, caja) a cada elemento para encontrarlos al instante.
+- Al hacer clic derecho (o selectionar), puedes ver los documentos vinculados.
 
 ### Pestaña "Datasheets y Manuales"
 - Sube o gestiona tus documentos (PDFs, manuales, hojas de datos).
