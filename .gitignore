@@ -15,3 +15,6 @@ dist/
 
 # OS generated files
 .Thumbs.db
+
+# Bitácora interna del asistente (uso privado)
+PROGRESS.md
