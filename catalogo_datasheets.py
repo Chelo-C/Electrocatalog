@@ -41,6 +41,12 @@ def guardar_configuracion(config):
     with open(CONFIG_FILE, "w") as file:
         json.dump(config, file, indent=4)
 
+def actualizar_configuracion(**kwargs):
+    """Actualiza claves en config.json sin borrar las existentes."""
+    config = cargar_configuracion()
+    config.update(kwargs)
+    guardar_configuracion(config)
+
 def cargar_configuracion():
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as file:
@@ -208,7 +214,7 @@ class CatalogoDatasheets(QWidget):
             archivo_seleccionado = file_dialog.selectedFiles()[0]
             if not archivo_seleccionado: return
             self.ultima_ruta = os.path.dirname(archivo_seleccionado)
-            guardar_configuracion({"ultima_ruta": self.ultima_ruta})
+            actualizar_configuracion(ultima_ruta=self.ultima_ruta)
             dialogo = DatasheetDialog(self)
             if dialogo.exec_() == QDialog.Accepted:
                 datos = dialogo.get_datos()

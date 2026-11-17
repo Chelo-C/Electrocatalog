@@ -177,7 +177,7 @@ class ElectroCatalogApp(QMainWindow):
     def buscar_vinculos(self):
         """Busca coincidencias entre componentes y documentos, excluyendo las ya vinculadas."""
         # Cargar vinculaciones existentes
-        vinculaciones_existentes = self.cargar_vinculaciones()
+        vinculaciones_existentes = cargar_vinculaciones()
         existentes = set((v["componente"], v["documento"]) for v in vinculaciones_existentes)  # Pares ya vinculados
 
         # Obtener listas actualizadas
@@ -223,7 +223,7 @@ class ElectroCatalogApp(QMainWindow):
     def vincular_seleccionados(self, dialog):
         """Agrega nuevas vinculaciones sin eliminar las existentes."""
         # Cargar vinculaciones existentes
-        vinculaciones_existentes = self.cargar_vinculaciones()
+        vinculaciones_existentes = cargar_vinculaciones()
         
         # Obtener nuevas vinculaciones seleccionadas
         nuevas_vinculaciones = []
@@ -238,7 +238,7 @@ class ElectroCatalogApp(QMainWindow):
         
         # Guardar la lista completa
         if nuevas_vinculaciones:
-            self.guardar_vinculaciones(vinculaciones_existentes)  # <-- Guardar todas
+            guardar_vinculaciones(vinculaciones_existentes)  # <-- Guardar todas
             QMessageBox.information(self, "Éxito", "Vinculaciones actualizadas correctamente.")
             # Actualizar la tabla de componentes
             catalogo_componentes = self.tabs.widget(0)

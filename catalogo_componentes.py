@@ -2,6 +2,7 @@
 # Copyright (C) 2026 Chelo
 # This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
+import catalogo_datasheets
 import csv
 import os
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
@@ -203,19 +204,19 @@ class CatalogoComponentes(QWidget):
         if not documentos_vinculados:
             return
 
-        documento_a_abrir = documentos_vinculados[0] # Abrir el primer documento de la lista
+        documento_a_abrir = documentos_vinculados[0]
 
-        # Buscar el documento en el catálogo de datasheets
         for nombre_doc, datos_doc in self.catalogo_datasheets.catalogo.items():
             if nombre_doc.strip().lower() == documento_a_abrir.strip().lower():
-                ruta = datos_doc.get("ruta")
-                if ruta and os.path.exists(ruta):
-                    self.catalogo_datasheets.abrir_archivo(ruta)
-                    return # Salir tras abrir el archivo
-                else:
-                    QMessageBox.warning(self, "Error", f"La ruta del archivo no existe o es inválida:\n{ruta}")
+                ruta_rel = datos_doc.get("ruta")
+                ruta_abs = catalogo_datasheets.get_ruta_absoluta(ruta_rel)   # <-- resolver
+                if ruta_abs and os.path.exists(ruta_abs):
+                    self.catalogo_datasheets.abrir_archivo(ruta_abs)
                     return
-        
+                else:
+                    QMessageBox.warning(self, "Error", f"La ruta del archivo no existe o es inválida:\n{ruta_abs}")
+                    return
+
         QMessageBox.warning(self, "Error", f"No se pudo encontrar el documento vinculado:\n{documento_a_abrir}")
 
     
