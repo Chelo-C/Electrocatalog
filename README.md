@@ -113,7 +113,14 @@ Si ElectroCatalog te ayuda a organizar tu taller o a encontrar ese datasheet que
 
 ## 📄 Licencia
 
-Este proyecto es de uso personal y abierto. Si lo compartes, agradeceré que mantengas la credits y los enlaces de apoyo.
+**ElectroCatalog** es software libre y se distribuye bajo los términos de la **GNU General Public License v3.0 o posterior (GPL-3.0-or-later)**.
+
+Puedes utilizarlo, estudiarlo, modificarlo y compartirlo libremente, siempre respetando las condiciones de esta licencia:
+- Las versiones modificadas que se distribuyan deberán conservar estas mismas libertades y proporcionar el código fuente correspondiente.
+- El uso comercial está permitido bajo los términos de la GPL.
+- Las donaciones son voluntarias y siempre serán bienvenidas.
+
+Consulta el archivo [LICENSE](LICENSE) para conocer los términos completos.
 
 ---
 

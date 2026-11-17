@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # ElectroCatalog - Un catalogador de componentes electrónicos.
 # Copyright (C) 2026 Chelo
 #
